@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
-            <form id="frm_tambah_user" enctype="multipart/form-data" method="POST" action="<?=base_url()?>admin/updateadmin">
+            <form id="frm_tambah_user" enctype="multipart/form-data" method="POST" action="<?=base_url()?>admin/tambahAdmin">
             	<div class="ibox-title">
                     <div class="row">
                         <div class="col-md-10">
@@ -17,19 +17,19 @@
                     <div class="form-group">
                         <label>Username:</label>
                         <input type="hidden" name="id"/>
-                        <input type="text" name="usernametambah" class="form-control" readonly required />
+                        <input type="text" name="username" class="form-control" required />
                     </div>
             		<div class="form-group">
             			<label>Nama:</label>
-            			<input type="text" name="namatambah" class="form-control" required />
+            			<input type="text" name="nama" class="form-control" required />
             		</div>
                     <div class="form-group">
                         <label>Password:</label>
-                        <input type="password" name="passwordtambah" class="form-control" required />
+                        <input type="password" name="password" class="form-control" required />
                     </div>
                     <div class="form-group">
                         <label>Konfirmasi Password:</label>
-                        <input type="password" name="konfirmasipasswordtambah" class="form-control" required />
+                        <input type="password" name="konfirmasipassword" class="form-control" required />
                     </div>
                 </div>
             </form>
