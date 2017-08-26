@@ -28,6 +28,8 @@
     <script src="<?=base_url()?>assets/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/plugins/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/plugins/dataTables.bootstrap.min.js"></script>
-
+    <?php
+        if (!empty($script))$this->load->view($script);
+    ?>
 	</body>
 </html>

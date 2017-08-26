@@ -20,10 +20,14 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data = array(
+			'link' => 'user',
+			'script' => 'script/userJS.php'
+		);
 		$this->load->view('template/header');
 		$this->load->view('template/sidebar');
 		$this->load->view('template/navbar');		
-		$this->load->view('template/edit_user');
+		$this->load->view('template/edit_user', $data);
 		$this->load->view('template/footer');
 	}
 }

@@ -8,16 +8,16 @@ class Model extends CI_Model {
     }
     
     function dalete($param = array(), $table){
-        return $this->default->delete($table, $param); 
+        return $this->db->delete($table, $param); 
     }
 
     function get($param = array(), $table){
-       return $this->default->get_where($table, $param);
+       return $this->db->get_where($table, $param);
     }
 
     function update($param = array(), $table, $data){       
-        $this->default->where($param);
-        return $this->default->update($table, $data); 
+        $this->db->where($param);
+        return $this->db->update($table, $data); 
     }
 
 }

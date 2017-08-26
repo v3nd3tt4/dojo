@@ -34,7 +34,7 @@ class Admin extends CI_Controller {
 		if(!$this->input->post()){
 			$return = array(
 				'status' => 'failed',
-				'text' => '',
+				'text' => '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><i class="fa fa-remove" aria-hidden="true"></i> Semua data harus diisi !</div>',
 				'page' => '',
 			);
 			echo json_encode($return);
@@ -44,7 +44,7 @@ class Admin extends CI_Controller {
 		if($this->input->post('password', true) != $this->input->post('konfirmasipassword', true)){
 			$return = array(
 				'status' => 'failed',
-				'text' => '',
+				'text' => '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><i class="fa fa-remove" aria-hidden="true"></i> Password tidak sama !</div>',
 				'page' => '',
 			);
 			echo json_encode($return);
@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
 		if($cek->num_rows() != 0){
 			$return = array(
 				'status' => 'failed',
-				'text' => '',
+				'text' => '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><i class="fa fa-remove" aria-hidden="true"></i> Username sudah pernah digunakan !</div>',
 				'page' => '',
 			);
 			echo json_encode($return);
@@ -71,14 +71,14 @@ class Admin extends CI_Controller {
 		$save = $this->Model->save($dataToSave, 'tb_user');
 		if($save){
 			$return = array(
-				'status' => 'failed',
-				'text' => '',
+				'status' => 'success',
+				'text' => '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><i class="fa fa-check" aria-hidden="true"></i> Data berhasil disimpan !</div>',
 				'page' => '',
 			);
 		}else{
 			$return = array(
 				'status' => 'failed',
-				'text' => '',
+				'text' => '<div class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><i class="fa fa-remove" aria-hidden="true"></i> Data gagal disimpan !</div>',
 				'page' => '',
 			);
 		}
