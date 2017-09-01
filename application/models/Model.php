@@ -20,4 +20,8 @@ class Model extends CI_Model {
         return $this->db->update($table, $data); 
     }
 
+    function getAll($table){
+        return $this->db->get($table);
+    }
+
 }

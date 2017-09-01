@@ -18,13 +18,18 @@ class Admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		// $this->load->view('template/header');
-		// $this->load->view('template/sidebar');
-		// $this->load->view('template/navbar');		
-		// $this->load->view('template/edit_user');
-		// $this->load->view('template/footer');
+	public function index(){
+		$this->load->model('Model');
+		$data = array(
+			'link' => 'user',
+			'script' => 'script/userJS.php',
+			'row' => $this->Model->getAll('tb_user')
+		);
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/navbar');		
+		$this->load->view('user/home_user', $data);
+		$this->load->view('template/footer');
 	}
 
 	public function tambahAdmin(){
@@ -84,5 +89,47 @@ class Admin extends CI_Controller {
 		}
 
 		echo json_encode($return);
+	}
+
+	public function pageAddUser(){
+		$this->load->model('Model');
+
+		if($this->input->get('id_user', true)){
+			$query = $this->Model->get(array('id_user' => $id_user), 'tb_user');
+		}
+
+		$data = array(
+			'link' => 'user',
+			'script' => 'script/userJS.php',
+			'row' => ''
+		);
+
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/navbar');		
+		$this->load->view('user/edit_user', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function pageEditUser(){
+		$this->load->model('Model');
+		$id_user = $this->input->get('id_user', true);
+
+		$query = $this->Model->get(array('id_user' => $id_user), 'tb_user');
+
+		// $getRow = $query->row();
+
+		$data = array(
+			'link' => 'user',
+			'script' => 'script/userJS.php',
+			'row' => $query
+		);
+
+		$this->load->view('template/header');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/navbar');		
+		$this->load->view('user/edit_user', $data);
+		$this->load->view('template/footer');
+
 	}
 }

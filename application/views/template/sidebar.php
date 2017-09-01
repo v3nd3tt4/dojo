@@ -18,7 +18,7 @@
                     </div>
                 </li>
                     <li>
-                    <a href="<?=base_url()?>adminNew/home"><i class="fa fa-th-large"></i> <span class="nav-label">Artikel</span> <!-- <span class="fa arrow"></span> --></a>
+                    <a href="<?=base_url()?>admin"><i class="fa fa-user"></i> <span class="nav-label">User </span> <!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level">
                         <li class="active"><a href="index.html">Dashboard FMC</a></li>
                         <li><a href="reguler.html">Dashboard V.2</a></li>
@@ -26,7 +26,7 @@
                     </ul> -->
                 </li>
                 <li>
-                    <a href="<?=base_url()?>adminNew/home/dosen"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <span class="nav-label">Dosen</span><!-- <span class="fa arrow"></span> --></a>
+                    <a href="<?=base_url()?>adminNew/home/dosen"><i class="fa fa-book" aria-hidden="true"></i> <span class="nav-label">Artikel</span><!-- <span class="fa arrow"></span> --></a>
                     <!-- <ul class="nav nav-second-level collapse">
                         <li><a href="transaction.html">Used Oil</a></li>
                         <li><a href="newoil.html">New Oil, Fuel & Others</a></li>
